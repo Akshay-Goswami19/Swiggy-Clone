@@ -8,8 +8,8 @@ function Search() {
   const [searchQuery, setSearchQuery] = useState("");
   const [dishesData, setDishesData] = useState([]);
   const [resData, setResData] = useState([]);
-  const filterOptions = ["Dishes", "Restaurant"];
-  const [activeBtn, setActiveBtn] = useState("Dishes");
+  const filterOptions = ["Restaurant", "Dishes"];
+  const [activeBtn, setActiveBtn] = useState("Restaurant");
 
   function handleActiveBtn(filterName) {
     setActiveBtn(activeBtn === filterName ? activeBtn : filterName);
@@ -26,6 +26,7 @@ function Search() {
       res?.data?.cards[1]?.groupedCard?.cardGroupMap?.DISH?.cards?.filter(
         (data) => data?.card?.card?.info
       );
+      console.log(res?.data?.cards)
     setDishesData(filterData);
   }
 
