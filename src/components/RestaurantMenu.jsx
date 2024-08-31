@@ -7,7 +7,7 @@ import useResMenuData from "../Hooks/useResMenuData";
 
 function RestaurantMenu() {
   let { id } = useParams();
-  let mainId = id.split("-").at(-1);
+  let mainId = id.split("-").at(-1).slice(4);
 
   const [resInfo, topPicksInfo, menuInfo, discountInfo] =
     useResMenuData(mainId);
